@@ -1,3 +1,7 @@
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdio.h>
 #include <time.h>
 #include "pico/stdlib.h"
@@ -35,7 +39,7 @@ bool pico_serial_transport_close(struct uxrCustomTransport * transport)
     return true;
 }
 
-size_t pico_serial_transport_write(struct uxrCustomTransport * transport, uint8_t *buf, size_t len, uint8_t *errcode)
+size_t pico_serial_transport_write(struct uxrCustomTransport * transport, const uint8_t *buf, size_t len, uint8_t *errcode)
 {
     for (size_t i = 0; i < len; i++)
     {
@@ -70,3 +74,7 @@ size_t pico_serial_transport_read(struct uxrCustomTransport * transport, uint8_t
     }
     return len;
 }
+
+#ifdef __cplusplus
+}
+#endif
