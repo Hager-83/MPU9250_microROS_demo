@@ -27,7 +27,7 @@ bool MPU9250_HAL::testConnection() // edit private function
     uint8_t who;
     readBytes(WHO_AM_I,&who,1);
     /* WHO_AM_I for MPU6500 typically 0x70 or 0x71 or 0x73 etc depending on part; accept non-zero */
-    if((who == 70) || (who == 71) || (who == 73)) // edit to the first 
+    if((who == 0X70) || (who == 0X71) || (who == 0X73)) // edit to the first 
     {
         return (true);
     }
@@ -78,29 +78,6 @@ bool MPU9250_HAL::initMPU9250()
         return false;
     }
 
-    /*
-
-    // INT pin config: enable bypass to access magnetometer directly if needed
-    if(!writeByte(INT_PIN_CFG, 0x02))
-    {
-        return false;
-    }
-
-    // Enable data ready interrupt 
-    if(!writeByte(INT_ENABLE, 0x01))
-    {
-        return false;
-    }
-    
-    sleep_ms(50);
-
-    // Disable I2C master (we use bypass), disable sleep mode important for magnometer 
-    if(!writeByte(USER_CTRL, 0x00))
-    {
-        return false;
-    }
-    sleep_ms(10);
-    */
 
     return true;
 }
