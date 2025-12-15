@@ -1,32 +1,25 @@
-/build
-pico-sdk
 
-.github/
+# Ignore everything
+*
 
-# Ignore compiled/object files
-*.o
-*.obj
-*.elf
-*.bin
-*.exe
+# Allow gitignore itself
+!.gitignore
 
-# Ignore logs
-*.log
+# Allow source code files
+!**/*.c
+!**/*.cpp
+!**/*.h
+!**/*.hpp
 
-# Ignore temporary/editor swap files
-*.swp
-*.tmp
-*~
+# Allow CMake and ROS files
+!CMakeLists.txt
+!package.xml
+!README.md
 
-# Ignore system files
-.DS_Store
-Thumbs.db
+# Allow your working folders
+!HAL/
+!Services/
 
-# CMake generated files/folders
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
-Makefile
-
-microros_static_library/build/
-
+# Allow contents inside them
+!HAL/**
+!Services/**
