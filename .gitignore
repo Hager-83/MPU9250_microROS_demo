@@ -17,9 +17,17 @@
 !README.md
 
 # Allow your working folders
+!.images/
 !HAL/
 !Services/
 
 # Allow contents inside them
 !HAL/**
 !Services/**
+
+# Allow image files (for README)
+!**/*.png
+!**/*.jpg
+!**/*.jpeg
+!**/*.gif
+!**/*.svg
